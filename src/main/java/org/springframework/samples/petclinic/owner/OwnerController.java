@@ -87,12 +87,12 @@ class OwnerController {
 			owner.setFirstName(""); // empty string signifies broadest possible search
 		}
 
-        // find owners by first name
-        Collection<Owner> results = this.owners.findByFirstName(owner.getFirstName());
+		// find owners by first name
+		Collection<Owner> results = this.owners.findByFirstName(owner.getFirstName());
 
-        if (results.isEmpty()) {
+		if (results.isEmpty()) {
 			// no owners found
-            result.rejectValue("firstName", "notFound", "not found");
+			result.rejectValue("firstName", "notFound", "not found");
 			return "owners/findOwners";
 		}
 		else if (results.size() == 1) {
